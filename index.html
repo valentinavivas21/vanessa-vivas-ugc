@@ -1,0 +1,2583 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanessa Vivas — UGC Creator · Moda, Beauty & Lifestyle</title>
+  <meta name="description" content="Portafolio oficial de Vanessa Vivas, UGC Creator especializada en contenido auténtico y de alta conversión para marcas de Beauty, Moda, Maternidad y Lifestyle.">
+  
+  <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS VARIABLES & THEME TOKENS
+       ========================================================================== */
+    :root {
+      /* Warm Palette Tokens */
+      --color-cream: #F3EEE5;
+      --color-beige-mid: #EAE0CE;
+      --color-brown-dark: #2A1C10;
+      --color-caramel: #8C6040;
+      --color-caramel-light: #C4A07A;
+      --color-caramel-soft: #DFC7AD;
+      --color-white: #FFFFFF;
+      
+      /* Semantic Theme Tokens (Light Default) */
+      --bg-primary: var(--color-cream);
+      --bg-secondary: var(--color-beige-mid);
+      --bg-card: #FAF6F0;
+      --bg-card-elevated: #FFFFFF;
+      --bg-dark-section: var(--color-brown-dark);
+      
+      --text-primary: var(--color-brown-dark);
+      --text-secondary: #6B5B4E;
+      --text-muted: #8E7D70;
+      --text-on-dark: #F3EEE5;
+      --text-on-dark-muted: #D1BEAC;
+      
+      --accent-main: var(--color-caramel);
+      --accent-hover: #734E32;
+      --accent-light: var(--color-caramel-light);
+      --accent-glow: rgba(140, 96, 64, 0.18);
+      
+      --border-subtle: rgba(42, 28, 16, 0.12);
+      --border-medium: rgba(42, 28, 16, 0.22);
+      --border-on-dark: rgba(243, 238, 229, 0.16);
+      
+      --nav-bg: rgba(243, 238, 229, 0.82);
+      --nav-border: rgba(42, 28, 16, 0.08);
+      --glass-shadow: 0 10px 30px rgba(42, 28, 16, 0.05);
+      
+      --placeholder-gradient: linear-gradient(135deg, #EFE8DC 0%, #DFD3C0 50%, #D0C0A8 100%);
+      --phone-mockup-bg: #1A130D;
+
+      /* Typography */
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      
+      /* Transitions */
+      --transition-base: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Dark Mode Override */
+    [data-theme="dark"] {
+      --bg-primary: #150E09;
+      --bg-secondary: #1F1610;
+      --bg-card: #221811;
+      --bg-card-elevated: #2C2018;
+      --bg-dark-section: #0D0805;
+      
+      --text-primary: #F7F2EC;
+      --text-secondary: #C8B9AA;
+      --text-muted: #9C8C7E;
+      --text-on-dark: #F7F2EC;
+      --text-on-dark-muted: #C8B9AA;
+      
+      --accent-main: var(--color-caramel-light);
+      --accent-hover: #D8B591;
+      --accent-light: #E5CBAD;
+      --accent-glow: rgba(196, 160, 122, 0.25);
+      
+      --border-subtle: rgba(243, 238, 229, 0.12);
+      --border-medium: rgba(243, 238, 229, 0.24);
+      --border-on-dark: rgba(243, 238, 229, 0.14);
+      
+      --nav-bg: rgba(21, 14, 9, 0.84);
+      --nav-border: rgba(243, 238, 229, 0.08);
+      --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      
+      --placeholder-gradient: linear-gradient(135deg, #2A1E15 0%, #38291D 50%, #251B12 100%);
+      --phone-mockup-bg: #0A0604;
+    }
+
+    /* ==========================================================================
+       GLOBAL RESETS & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-weight: 400;
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    img, video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-base);
+    }
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      border: none;
+      background: none;
+      transition: var(--transition-base);
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    /* Container Utility */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .container-narrow {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Typography Utilities */
+    .font-serif {
+      font-family: var(--font-serif);
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-main);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 1.5rem;
+      height: 1px;
+      background-color: currentColor;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-desc {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-center .section-eyebrow::before {
+      display: none;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.875rem 1.875rem;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      border-radius: 9999px;
+      transition: var(--transition-base);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-main);
+      color: var(--color-white);
+      box-shadow: 0 6px 18px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-medium);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-secondary);
+      border-color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background-color: var(--color-brown-dark);
+      color: var(--color-cream);
+    }
+
+    .btn-dark:hover {
+      background-color: #3e2b1b;
+      transform: translateY(-2px);
+    }
+
+    /* Button inside dark card */
+    [data-theme="dark"] .btn-primary {
+      color: #150E09;
+    }
+
+    /* ==========================================================================
+       PLACEHOLDER COMPONENT (photo-placeholder)
+       ========================================================================== */
+    .photo-placeholder {
+      position: relative;
+      background: var(--placeholder-gradient);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      box-shadow: var(--glass-shadow);
+      transition: var(--transition-smooth);
+    }
+
+    .photo-placeholder img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      z-index: 1;
+    }
+
+    .photo-placeholder:hover img {
+      transform: scale(1.03);
+    }
+
+    .placeholder-fallback {
+      position: relative;
+      z-index: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      gap: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .placeholder-icon {
+      width: 44px;
+      height: 44px;
+      stroke: var(--accent-main);
+      stroke-width: 1.25;
+      opacity: 0.85;
+    }
+
+    .placeholder-tag {
+      font-size: 0.8125rem;
+      font-style: italic;
+      font-family: var(--font-serif);
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       1. FIXED NAVIGATION BAR (NAV)
+       ========================================================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--nav-border);
+      transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      padding: 1.25rem 0;
+    }
+
+    .site-header.scrolled {
+      padding: 0.85rem 0;
+      box-shadow: var(--glass-shadow);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 1.625rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-logo span {
+      color: var(--accent-main);
+      font-style: italic;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--accent-main);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      background-color: var(--bg-card);
+      transition: var(--transition-base);
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--accent-main);
+      transform: rotate(15deg);
+    }
+
+    .theme-toggle-btn svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.75;
+    }
+
+    .icon-sun { display: none; }
+    .icon-moon { display: block; }
+    [data-theme="dark"] .icon-sun { display: block; }
+    [data-theme="dark"] .icon-moon { display: none; }
+
+    /* Mobile Menu Toggle */
+    .mobile-nav-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      z-index: 1100;
+    }
+
+    .mobile-nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: var(--text-primary);
+      transition: var(--transition-base);
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 85%;
+      max-width: 360px;
+      height: 100vh;
+      background-color: var(--bg-card);
+      border-left: 1px solid var(--border-subtle);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+      z-index: 1050;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 6rem 2rem 3rem;
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mobile-drawer.open {
+      right: 0;
+    }
+
+    .mobile-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1040;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-drawer-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .mobile-drawer-link {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       2. HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      padding-top: calc(85px + 4rem);
+      padding-bottom: 5rem;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-main);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-main);
+      border-radius: 50%;
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 5.5vw, 4.8rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .hero-title span {
+      font-style: italic;
+      color: var(--accent-main);
+      font-weight: 400;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: clamp(1.25rem, 2vw, 1.625rem);
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-desc {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 540px;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+      width: 100%;
+    }
+
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metric-value {
+      font-family: var(--font-serif);
+      font-size: 2.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .metric-label {
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+      font-weight: 500;
+    }
+
+    /* Hero Photo Column */
+    .hero-visual-wrapper {
+      position: relative;
+    }
+
+    .hero-photo-container {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 20px;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(42, 28, 16, 0.12);
+    }
+
+    .hero-visual-badge {
+      position: absolute;
+      bottom: -1.25rem;
+      left: -1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      padding: 1rem 1.35rem;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      z-index: 5;
+      backdrop-filter: blur(8px);
+    }
+
+    .badge-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--color-caramel);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .badge-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .badge-text strong {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .badge-text span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       3. BARRA DE NICHOS (NICHES MARQUEE)
+       ========================================================================== */
+    .niches-bar {
+      background-color: var(--color-brown-dark);
+      padding: 1.25rem 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(196, 160, 122, 0.2);
+      border-bottom: 1px solid rgba(196, 160, 122, 0.2);
+      position: relative;
+    }
+
+    .niches-track {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      white-space: nowrap;
+      animation: marqueeScroll 25s linear infinite;
+    }
+
+    .niches-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .niche-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+      color: var(--color-caramel-light);
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .niche-star {
+      color: var(--color-caramel);
+      font-size: 0.875rem;
+      opacity: 0.75;
+    }
+
+    /* ==========================================================================
+       4. SOBRE MÍ (ABOUT ME)
+       ========================================================================== */
+    .section-padding {
+      padding: 6.5rem 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .about-photo-wrapper {
+      position: relative;
+    }
+
+    .about-photo-frame {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 16px;
+      position: relative;
+    }
+
+    .about-deco-frame {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--accent-main);
+      border-radius: 16px;
+      z-index: 0;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-quote {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--accent-main);
+      margin: 1.25rem 0 1.5rem;
+      border-left: 2px solid var(--accent-main);
+      padding-left: 1.25rem;
+    }
+
+    .about-text {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .highlight-card {
+      background-color: var(--bg-card);
+      padding: 1.25rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .highlight-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .highlight-title svg {
+      width: 18px;
+      height: 18px;
+      color: var(--accent-main);
+    }
+
+    .highlight-desc {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       5. SERVICIOS (SERVICES)
+       ========================================================================== */
+    .services-section {
+      background-color: var(--bg-secondary);
+      transition: background-color 0.4s ease;
+    }
+
+    .services-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .service-card {
+      background-color: var(--bg-card-elevated);
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      transition: var(--transition-smooth);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px var(--glass-shadow);
+      border-color: var(--accent-light);
+    }
+
+    .service-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-number {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--accent-main);
+      line-height: 1;
+      opacity: 0.9;
+    }
+
+    .service-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background-color: var(--bg-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-main);
+    }
+
+    .service-icon-wrap svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .service-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .service-body {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .service-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      background-color: var(--bg-primary);
+      color: var(--text-muted);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+    }
+
+    /* ==========================================================================
+       6. PORTAFOLIO (PHONE MOCKUPS 9/16)
+       ========================================================================== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .phone-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Realistic Phone Mockup Frame */
+    .phone-mockup {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      background-color: var(--phone-mockup-bg);
+      border-radius: 36px;
+      border: 9px solid #201711;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    [data-theme="light"] .phone-mockup {
+      border-color: #2D221A;
+      box-shadow: 0 20px 40px rgba(42, 28, 16, 0.18), 0 0 0 1px rgba(42, 28, 16, 0.15);
+    }
+
+    .phone-card:hover .phone-mockup {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 28px 50px rgba(42, 28, 16, 0.25);
+    }
+
+    /* Top Speaker & Dynamic Island Pill */
+    .phone-island {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 72px;
+      height: 18px;
+      background-color: #000;
+      border-radius: 20px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 8px;
+    }
+
+    .camera-lens {
+      width: 7px;
+      height: 7px;
+      background-color: #1a1a2e;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .phone-placeholder {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 26px;
+    }
+
+    .phone-placeholder img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    /* Screen UI Overlay */
+    .phone-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.4) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.75rem 1.25rem 1.25rem;
+      color: #fff;
+    }
+
+    .phone-top-bar {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .video-pill {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .play-btn-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      background: rgba(243, 238, 229, 0.85);
+      backdrop-filter: blur(6px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-brown-dark);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: var(--transition-base);
+    }
+
+    .play-btn-circle svg {
+      width: 20px;
+      height: 20px;
+      margin-left: 3px;
+    }
+
+    .phone-card:hover .play-btn-circle {
+      transform: translate(-50%, -50%) scale(1.12);
+      background: var(--color-caramel-light);
+      color: #fff;
+    }
+
+    .phone-bottom-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .phone-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-caramel-light);
+    }
+
+    .phone-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+
+    .phone-caption {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .phone-caption-label {
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .phone-caption-sub {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ==========================================================================
+       7. MI PROCESO (5 STEPS ROW - DARK BACKGROUND)
+       ========================================================================== */
+    .process-section {
+      background-color: var(--bg-dark-section);
+      color: var(--text-on-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .process-section .section-title {
+      color: var(--text-on-dark);
+    }
+
+    .process-section .section-desc {
+      color: var(--text-on-dark-muted);
+    }
+
+    .process-steps-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+      position: relative;
+    }
+
+    /* Connecting Dashed Line */
+    .process-steps-row::before {
+      content: "";
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      border-top: 2px dashed rgba(196, 160, 122, 0.3);
+      z-index: 1;
+    }
+
+    .process-step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .step-badge {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #1C120A;
+      border: 2px solid var(--color-caramel);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--color-caramel-light);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 20px rgba(140, 96, 64, 0.25);
+      transition: var(--transition-base);
+    }
+
+    .process-step-item:hover .step-badge {
+      background: var(--color-caramel);
+      color: #fff;
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(196, 160, 122, 0.5);
+    }
+
+    .step-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text-on-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .step-desc {
+      font-size: 0.875rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       8. PAQUETES (PRICING CARDS - GROWTH HIGHLIGHTED)
+       ========================================================================== */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      align-items: stretch;
+      margin-top: 3.5rem;
+    }
+
+    .package-card {
+      background-color: var(--bg-card);
+      border-radius: 20px;
+      padding: 3rem 2.25rem;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .package-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px var(--glass-shadow);
+    }
+
+    /* Highlighted Growth Card in #8C6040 */
+    .package-card.highlighted {
+      background: linear-gradient(160deg, #8C6040 0%, #6E492E 100%);
+      color: #FFFFFF;
+      border: none;
+      box-shadow: 0 20px 45px rgba(140, 96, 64, 0.35);
+      transform: scale(1.04);
+      z-index: 2;
+    }
+
+    .package-card.highlighted:hover {
+      transform: scale(1.06) translateY(-4px);
+    }
+
+    .package-badge-popular {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--color-brown-dark);
+      color: var(--color-caramel-light);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 1.25rem;
+      border-radius: 9999px;
+      border: 1px solid var(--color-caramel-light);
+      white-space: nowrap;
+    }
+
+    .package-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .package-card.highlighted .package-header {
+      border-bottom-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .package-name {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .package-card:not(.highlighted) .package-name {
+      color: var(--text-primary);
+    }
+
+    .package-ideal {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .package-card.highlighted .package-ideal {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .package-price-wrap {
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    .package-price-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    .package-card.highlighted .package-price-label {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .package-price {
+      font-family: var(--font-serif);
+      font-size: 2.25rem;
+      font-weight: 700;
+    }
+
+    .package-card:not(.highlighted) .package-price {
+      color: var(--accent-main);
+    }
+
+    .package-features {
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+    }
+
+    .package-card:not(.highlighted) .feature-item {
+      color: var(--text-secondary);
+    }
+
+    .feature-check {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .package-card:not(.highlighted) .feature-check {
+      color: var(--accent-main);
+    }
+
+    .package-card.highlighted .feature-check {
+      color: #FFFFFF;
+    }
+
+    .package-card.highlighted .btn-package {
+      background-color: #FFFFFF;
+      color: #8C6040;
+      font-weight: 600;
+    }
+
+    .package-card.highlighted .btn-package:hover {
+      background-color: var(--color-cream);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ==========================================================================
+       9. CONTACTO (CONTACT SECTION)
+       ========================================================================== */
+    .contact-section {
+      background-color: var(--bg-secondary);
+      position: relative;
+    }
+
+    .contact-box {
+      background-color: var(--bg-card);
+      border-radius: 28px;
+      padding: 4.5rem 3rem;
+      border: 1px solid var(--border-medium);
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+      box-shadow: 0 20px 45px var(--glass-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-box::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      color: var(--text-primary);
+    }
+
+    .contact-desc {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .contact-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #2E7D32;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #2E7D32;
+    }
+
+    /* ==========================================================================
+       10. FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--color-brown-dark);
+      color: var(--color-cream);
+      padding: 3.5rem 0 2.5rem;
+      border-top: 1px solid rgba(196, 160, 122, 0.15);
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(243, 238, 229, 0.12);
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--color-cream);
+    }
+
+    .footer-brand span {
+      font-style: italic;
+      color: var(--color-caramel-light);
+    }
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav-link {
+      font-size: 0.875rem;
+      color: var(--text-on-dark-muted);
+      transition: var(--transition-base);
+    }
+
+    .footer-nav-link:hover {
+      color: var(--color-cream);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      font-size: 0.8125rem;
+      color: var(--text-on-dark-muted);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--color-caramel-light);
+      font-weight: 500;
+      font-size: 0.8125rem;
+      transition: var(--transition-base);
+    }
+
+    .back-to-top:hover {
+      color: var(--color-cream);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       SCROLL ANIMATIONS (INTERSECTION OBSERVER UTILITIES)
+       ========================================================================== */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (MEDIA QUERIES)
+       ========================================================================== */
+    @media (max-width: 1080px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+
+      .process-steps-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      
+      .process-steps-row::before {
+        display: none;
+      }
+
+      .packages-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .package-card.highlighted {
+        transform: none;
+      }
+      
+      .package-card.highlighted:hover {
+        transform: translateY(-6px);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .hero-photo-container {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .about-photo-wrapper {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .nav-menu, .nav-actions .btn {
+        display: none;
+      }
+
+      .mobile-nav-toggle {
+        display: flex;
+      }
+
+      .process-steps-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        max-width: 340px;
+        margin: 3rem auto 0;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .hero-metrics {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 3rem 1.5rem;
+      }
+
+      .footer-top, .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. FIXED NAVIGATION BAR (NAV)
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Vanessa Vivas Inicio">
+        Vanessa Vivas<span>.</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Navegación Principal">
+        <a href="#about" class="nav-link">Sobre Mí</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#portafolio" class="nav-link">Portafolio</a>
+        <a href="#proceso" class="nav-link">Proceso</a>
+        <a href="#paquetes" class="nav-link">Paquetes</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <!-- Nav Actions & Dark Mode Toggle -->
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Cambiar tema de color" title="Alternar modo claro / oscuro">
+          <!-- Sun Icon for Dark Mode -->
+          <svg class="icon-sun" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon for Light Mode -->
+          <svg class="icon-moon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="#contacto" class="btn btn-primary">Trabajemos</a>
+
+        <!-- Hamburger Button for Mobile -->
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Abrir menú de navegación">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-links">
+      <a href="#about" class="mobile-drawer-link">Sobre Mí</a>
+      <a href="#servicios" class="mobile-drawer-link">Servicios</a>
+      <a href="#portafolio" class="mobile-drawer-link">Portafolio</a>
+      <a href="#proceso" class="mobile-drawer-link">Mi Proceso</a>
+      <a href="#paquetes" class="mobile-drawer-link">Paquetes</a>
+      <a href="#contacto" class="mobile-drawer-link">Contacto</a>
+    </div>
+    <div>
+      <a href="#contacto" class="btn btn-primary" style="width: 100%;">Trabajemos Juntos</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         2. HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <!-- Hero Text (Left Column) -->
+        <div class="hero-content fade-in-up">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            UGC Creator · Contenido Auténtico
+          </div>
+          <h1 class="hero-title">
+            Vanessa Vivas<span>.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Storytelling visual, estética editorial & conexión que convierte.
+          </p>
+          <p class="hero-desc">
+            Ayudo a marcas de moda, belleza, maternidad y lifestyle a conectar de manera genuina con su audiencia a través de videos y fotografías de alto impacto que transforman espectadores en clientes fieles.
+          </p>
+          <div class="hero-buttons">
+            <a href="#portafolio" class="btn btn-primary">Ver Portafolio</a>
+            <a href="#contacto" class="btn btn-secondary">Trabajemos</a>
+          </div>
+          
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-value">+85%</span>
+              <span class="metric-label">Retención Promedio</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-value">+50</span>
+              <span class="metric-label">Colaboraciones</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-value">4.9★</span>
+              <span class="metric-label">Satisfacción de Marca</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Photo (Right Column) -->
+        <div class="hero-visual-wrapper fade-in-up">
+          <div class="hero-photo-container photo-placeholder">
+            <img src="hero.jpg" alt="Vanessa Vivas - UGC Creator" onerror="this.style.display='none'">
+            <div class="placeholder-fallback">
+              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+              <span class="placeholder-tag">[ foto próximamente ]</span>
+            </div>
+          </div>
+          <div class="hero-visual-badge">
+            <div class="badge-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="badge-text">
+              <strong>UGC Content Creator</strong>
+              <span>Especialista en Beauty & Moda</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. BARRA DE NICHOS (NICHES BAR)
+         ========================================================================== -->
+    <section class="niches-bar" aria-label="Nichos de Especialidad">
+      <div class="niches-track">
+        <!-- Set 1 -->
+        <div class="niche-item">Beauty <span class="niche-star">✦</span></div>
+        <div class="niche-item">Moda <span class="niche-star">✦</span></div>
+        <div class="niche-item">Maternidad <span class="niche-star">✦</span></div>
+        <div class="niche-item">Lifestyle <span class="niche-star">✦</span></div>
+        <div class="niche-item">Servicios <span class="niche-star">✦</span></div>
+        <div class="niche-item">Skincare & Bienestar <span class="niche-star">✦</span></div>
+        <div class="niche-item">Unboxing & Reviews <span class="niche-star">✦</span></div>
+
+        <!-- Repeated Set for Seamless Loop -->
+        <div class="niche-item">Beauty <span class="niche-star">✦</span></div>
+        <div class="niche-item">Moda <span class="niche-star">✦</span></div>
+        <div class="niche-item">Maternidad <span class="niche-star">✦</span></div>
+        <div class="niche-item">Lifestyle <span class="niche-star">✦</span></div>
+        <div class="niche-item">Servicios <span class="niche-star">✦</span></div>
+        <div class="niche-item">Skincare & Bienestar <span class="niche-star">✦</span></div>
+        <div class="niche-item">Unboxing & Reviews <span class="niche-star">✦</span></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. SOBRE MÍ (ABOUT ME)
+         ========================================================================== */ -->
+    <section class="section-padding" id="about">
+      <div class="container about-grid">
+        <!-- Photo Left -->
+        <div class="about-photo-wrapper fade-in-up">
+          <div class="about-deco-frame"></div>
+          <div class="about-photo-frame photo-placeholder">
+            <img src="about.jpg" alt="Sobre Vanessa Vivas" onerror="this.style.display='none'">
+            <div class="placeholder-fallback">
+              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span class="placeholder-tag">[ foto próximamente ]</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Right -->
+        <div class="about-content fade-in-up">
+          <span class="section-eyebrow">Sobre Mí</span>
+          <h2 class="section-title">Contenido orgánico que no parece publicidad</h2>
+          
+          <blockquote class="about-quote">
+            "Creo en el poder de la naturalidad, el buen gusto y las historias que generan una emoción real antes de pedir una compra."
+          </blockquote>
+          
+          <p class="about-text">
+            ¡Hola! Soy Vanessa Vivas, creadora de contenido UGC con base en la autenticidad y el cuidado del detalle estético. Mi enfoque combina la frescura de la vida cotidiana con técnicas estratégicas de marketing digital (hooks magnéticos, retención de atención y llamados a la acción precisos).
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-card">
+              <div class="highlight-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+                Estética Editorial
+              </div>
+              <p class="highlight-desc">Iluminación cuidada, fondos armónicos y tomas limpias inspiradas en revistas de moda y belleza.</p>
+            </div>
+
+            <div class="highlight-card">
+              <div class="highlight-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+                Conversión & CTR
+              </div>
+              <p class="highlight-desc">Estructuras pensadas para TikTok Ads y Meta Ads que reducen el costo por adquisición (CPA).</p>
+            </div>
+          </div>
+
+          <div>
+            <a href="#servicios" class="btn btn-secondary">Descubre mis Servicios</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. SERVICIOS (SERVICES - 3x2 GRID 01-06)
+         ========================================================================== -->
+    <section class="section-padding services-section" id="servicios">
+      <div class="container">
+        <div class="text-center services-header fade-in-up">
+          <span class="section-eyebrow">Soluciones Creativas</span>
+          <h2 class="section-title">Servicios Especializados</h2>
+          <p class="section-desc" style="margin: 0 auto;">Formatos versátiles y contenido optimizado para potenciar el rendimiento de tus campañas orgánicas y de pago.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- 01 Videos UGC -->
+          <article class="service-card fade-in-up">
+            <div>
+              <div class="service-top">
+                <span class="service-number">01</span>
+                <div class="service-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="service-title">Videos UGC</h3>
+              <p class="service-body">Videos dinámicos verticales (9:16) en formato TikTok, Reels o YouTube Shorts con ganchos iniciales de alto impacto y edición moderna.</p>
+            </div>
+            <div class="service-tags">
+              <span class="service-tag">TikTok</span>
+              <span class="service-tag">Reels</span>
+              <span class="service-tag">Meta Ads</span>
+            </div>
+          </article>
+
+          <!-- 02 Fotografía de Producto -->
+          <article class="service-card fade-in-up">
+            <div>
+              <div class="service-top">
+                <span class="service-number">02</span>
+                <div class="service-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="service-title">Fotografía de Producto</h3>
+              <p class="service-body">Sesiones lifestyle y flatlays con estilismo profesional, luz natural y estética cálida para tu e-commerce o redes sociales.</p>
+            </div>
+            <div class="service-tags">
+              <span class="service-tag">Lifestyle</span>
+              <span class="service-tag">Flatlays</span>
+              <span class="service-tag">E-Commerce</span>
+            </div>
+          </article>
+
+          <!-- 03 Testimoniales -->
+          <article class="service-card fade-in-up">
+            <div>
+              <div class="service-top">
+                <span class="service-number">03</span>
+                <div class="service-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="service-title">Testimoniales & Reviews</h3>
+              <p class="service-body">Reseñas honestas y demostraciones de uso frente a cámara que derriban dudas de compra y generan prueba social sólida.</p>
+            </div>
+            <div class="service-tags">
+              <span class="service-tag">Prueba Social</span>
+              <span class="service-tag">Review</span>
+              <span class="service-tag">Unboxing</span>
+            </div>
+          </article>
+
+          <!-- 04 Script Writing -->
+          <article class="service-card fade-in-up">
+            <div>
+              <div class="service-top">
+                <span class="service-number">04</span>
+                <div class="service-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 20h9"></path>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="service-title">Script Writing</h3>
+              <p class="service-body">Desarrollo de guiones estratégicos con fórmulas de copywriting comprobadas (AIDA, PAS), variaciones de hook y CTAs claros.</p>
+            </div>
+            <div class="service-tags">
+              <span class="service-tag">Guiones</span>
+              <span class="service-tag">Hooks</span>
+              <span class="service-tag">Copywriting</span>
+            </div>
+          </article>
+
+          <!-- 05 Raw Footage -->
+          <article class="service-card fade-in-up">
+            <div>
+              <div class="service-top">
+                <span class="service-number">05</span>
+                <div class="service-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                    <line x1="7" y1="2" x2="7" y2="22"></line>
+                    <line x1="17" y1="2" x2="17" y2="22"></line>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <line x1="2" y1="7" x2="7" y2="7"></line>
+                    <line x1="2" y1="17" x2="7" y2="17"></line>
+                    <line x1="17" y1="17" x2="22" y2="17"></line>
+                    <line x1="17" y1="7" x2="22" y2="7"></line>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="service-title">Raw Footage / B-Roll</h3>
+              <p class="service-body">Grabaciones en bruto en alta resolución con múltiples ángulos, texturas y primeros planos para que tu equipo de edición cree iteraciones infinitas.</p>
+            </div>
+            <div class="service-tags">
+              <span class="service-tag">4K Footage</span>
+              <span class="service-tag">B-Roll</span>
+              <span class="service-tag">Variedad</span>
+            </div>
+          </article>
+
+          <!-- 06 Add-ons Personalizados -->
+          <article class="service-card fade-in-up">
+            <div>
+              <div class="service-top">
+                <span class="service-number">06</span>
+                <div class="service-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="service-title">Add-ons Personalizados</h3>
+              <p class="service-body">Derechos de uso publicitario extendidos (Paid Ads / Whitelisting), entrega urgente en 48h, hooks adicionales y subtitulado bilingüe.</p>
+            </div>
+            <div class="service-tags">
+              <span class="service-tag">Whitelisting</span>
+              <span class="service-tag">Paid Ads</span>
+              <span class="service-tag">Fast Delivery</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. PORTAFOLIO (4 VERTICAL PHONE MOCKUPS - 9/16)
+         ========================================================================== -->
+    <section class="section-padding" id="portafolio">
+      <div class="container">
+        <div class="text-center fade-in-up">
+          <span class="section-eyebrow">Trabajos Seleccionados</span>
+          <h2 class="section-title">Portafolio en Acción</h2>
+          <p class="section-desc" style="margin: 0 auto;">Ejemplos visuales estructurados para captar los primeros 3 segundos de atención y guiar a la acción.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- 1. Beauty · Review -->
+          <div class="phone-card fade-in-up">
+            <div class="phone-mockup">
+              <div class="phone-island">
+                <span class="camera-lens"></span>
+              </div>
+              <div class="phone-placeholder">
+                <img src="portfolio-1.jpg" alt="Beauty Review - Vanessa Vivas" onerror="this.style.display='none'">
+                <div class="placeholder-fallback">
+                  <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  <span class="placeholder-tag">[ foto próximamente ]</span>
+                </div>
+              </div>
+              <div class="phone-overlay">
+                <div class="phone-top-bar">
+                  <span class="video-pill">0:32</span>
+                </div>
+                <div class="play-btn-circle" title="Reproducir contenido">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+                <div class="phone-bottom-info">
+                  <span class="phone-tag">Beauty · Review</span>
+                  <h4 class="phone-title">Rutina Skincare Glow</h4>
+                </div>
+              </div>
+            </div>
+            <div class="phone-caption">
+              <h4 class="phone-caption-label">Beauty · Review</h4>
+              <p class="phone-caption-sub">Demostración + Texturas en primer plano</p>
+            </div>
+          </div>
+
+          <!-- 2. Moda · Lifestyle -->
+          <div class="phone-card fade-in-up">
+            <div class="phone-mockup">
+              <div class="phone-island">
+                <span class="camera-lens"></span>
+              </div>
+              <div class="phone-placeholder">
+                <img src="portfolio-2.jpg" alt="Moda Lifestyle - Vanessa Vivas" onerror="this.style.display='none'">
+                <div class="placeholder-fallback">
+                  <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  <span class="placeholder-tag">[ foto próximamente ]</span>
+                </div>
+              </div>
+              <div class="phone-overlay">
+                <div class="phone-top-bar">
+                  <span class="video-pill">0:28</span>
+                </div>
+                <div class="play-btn-circle" title="Reproducir contenido">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+                <div class="phone-bottom-info">
+                  <span class="phone-tag">Moda · Lifestyle</span>
+                  <h4 class="phone-title">Lookbook Cápsula de Temporada</h4>
+                </div>
+              </div>
+            </div>
+            <div class="phone-caption">
+              <h4 class="phone-caption-label">Moda · Lifestyle</h4>
+              <p class="phone-caption-sub">Transiciones dinámicas y estilismo</p>
+            </div>
+          </div>
+
+          <!-- 3. Maternidad · UGC -->
+          <div class="phone-card fade-in-up">
+            <div class="phone-mockup">
+              <div class="phone-island">
+                <span class="camera-lens"></span>
+              </div>
+              <div class="phone-placeholder">
+                <img src="portfolio-3.jpg" alt="Maternidad UGC - Vanessa Vivas" onerror="this.style.display='none'">
+                <div class="placeholder-fallback">
+                  <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  <span class="placeholder-tag">[ foto próximamente ]</span>
+                </div>
+              </div>
+              <div class="phone-overlay">
+                <div class="phone-top-bar">
+                  <span class="video-pill">0:45</span>
+                </div>
+                <div class="play-btn-circle" title="Reproducir contenido">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+                <div class="phone-bottom-info">
+                  <span class="phone-tag">Maternidad · UGC</span>
+                  <h4 class="phone-title">Rutinas Diarias & Cuidado Familiar</h4>
+                </div>
+              </div>
+            </div>
+            <div class="phone-caption">
+              <h4 class="phone-caption-label">Maternidad · UGC</h4>
+              <p class="phone-caption-sub">Conexión real, calidez y practicidad</p>
+            </div>
+          </div>
+
+          <!-- 4. Servicios · Testimonio -->
+          <div class="phone-card fade-in-up">
+            <div class="phone-mockup">
+              <div class="phone-island">
+                <span class="camera-lens"></span>
+              </div>
+              <div class="phone-placeholder">
+                <img src="portfolio-4.jpg" alt="Servicios Testimonio - Vanessa Vivas" onerror="this.style.display='none'">
+                <div class="placeholder-fallback">
+                  <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  <span class="placeholder-tag">[ foto próximamente ]</span>
+                </div>
+              </div>
+              <div class="phone-overlay">
+                <div class="phone-top-bar">
+                  <span class="video-pill">0:35</span>
+                </div>
+                <div class="play-btn-circle" title="Reproducir contenido">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+                <div class="phone-bottom-info">
+                  <span class="phone-tag">Servicios · Testimonio</span>
+                  <h4 class="phone-title">Experiencia de Usuario & App</h4>
+                </div>
+              </div>
+            </div>
+            <div class="phone-caption">
+              <h4 class="phone-caption-label">Servicios · Testimonio</h4>
+              <p class="phone-caption-sub">Narrativa directa frente a cámara</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. MI PROCESO (5 STEPS - DARK BACKGROUND #2A1C10)
+         ========================================================================== -->
+    <section class="section-padding process-section" id="proceso">
+      <div class="container">
+        <div class="text-center fade-in-up">
+          <span class="section-eyebrow" style="color: var(--color-caramel-light);">Metodología Colaborativa</span>
+          <h2 class="section-title">Mi Proceso Creativo</h2>
+          <p class="section-desc" style="margin: 0 auto;">Un flujo de trabajo ágil, transparente y orientado a maximizar el rendimiento de tu inversión.</p>
+        </div>
+
+        <div class="process-steps-row">
+          <!-- Step 1 -->
+          <div class="process-step-item fade-in-up">
+            <div class="step-badge">01</div>
+            <h3 class="step-name">Brief</h3>
+            <p class="step-desc">Alineamos objetivos, público objetivo, propuesta de valor y mensaje central de la marca.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step-item fade-in-up">
+            <div class="step-badge">02</div>
+            <h3 class="step-name">Estrategia</h3>
+            <p class="step-desc">Diseño de ganchos magnéticos, guiones conceptuales y ángulos de venta para aprobación.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step-item fade-in-up">
+            <div class="step-badge">03</div>
+            <h3 class="step-name">Filmación</h3>
+            <p class="step-desc">Grabación en alta calidad con iluminación estética y entornos naturales que transmitan cercanía.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step-item fade-in-up">
+            <div class="step-badge">04</div>
+            <h3 class="step-name">Edición</h3>
+            <p class="step-desc">Cortes rítmicos, subtítulos llamativos, música en tendencia y elementos visuales de conversión.</p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="process-step-item fade-in-up">
+            <div class="step-badge">05</div>
+            <h3 class="step-name">Entrega</h3>
+            <p class="step-desc">Revisión de detalles y entrega de archivos finales listos para pautar o publicar orgánicamente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. PAQUETES (PRICING PACKAGES - GROWTH HIGHLIGHTED #8C6040)
+         ========================================================================== -->
+    <section class="section-padding" id="paquetes">
+      <div class="container">
+        <div class="text-center fade-in-up">
+          <span class="section-eyebrow">Planes a Medida</span>
+          <h2 class="section-title">Paquetes de Colaboración</h2>
+          <p class="section-desc" style="margin: 0 auto;">Opciones flexibles diseñadas tanto para pruebas de producto como para campañas integrales escalables.</p>
+        </div>
+
+        <div class="packages-grid">
+          <!-- Package 1: Starter -->
+          <div class="package-card fade-in-up">
+            <div>
+              <div class="package-header">
+                <h3 class="package-name">Starter</h3>
+                <p class="package-ideal">Ideal para probar nuevos ángulos y creadores.</p>
+                <div class="package-price-wrap">
+                  <span class="package-price-label">Inversión</span>
+                  <div class="package-price">A consultar</div>
+                </div>
+              </div>
+
+              <div class="package-features">
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span><strong>1 a 2 Videos UGC</strong> verticales (9:16)</span>
+                </div>
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>1 Variación de Hook por video</span>
+                </div>
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Edición completa con subtítulos</span>
+                </div>
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Uso orgánico en redes</span>
+                </div>
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>1 Ronda de revisiones</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="mailto:vanessavivasugc@gmail.com?subject=Consulta%20Paquete%20Starter" class="btn btn-secondary" style="width: 100%;">
+              Consultar Starter
+            </a>
+          </div>
+
+          <!-- Package 2: Growth (Highlighted in #8C6040) -->
+          <div class="package-card highlighted fade-in-up">
+            <div class="package-badge-popular">Más Elegido</div>
+            <div>
+              <div class="package-header">
+                <h3 class="package-name">Growth</h3>
+                <p class="package-ideal">El paquete perfecto para escalar campañas en Meta & TikTok Ads.</p>
+                <div class="package-price-wrap">
+                  <span class="package-price-label">Inversión</span>
+                  <div class="package-price">A consultar</div>
+                </div>
+              </div>
+
+              <div class="package-features">
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span><strong>3 a 5 Videos UGC</strong> completos</span>
+                </div>
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span><strong>2 Variaciones de Hook + 1 CTA</strong> por video</span>
+                </div>
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Raw Footage / B-roll incluido</span>
+                </div>
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Derechos de uso para Paid Ads (30 días)</span>
+                </div>
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Guiones estratégicos incluidos</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="mailto:vanessavivasugc@gmail.com?subject=Consulta%20Paquete%20Growth" class="btn btn-package" style="width: 100%;">
+              Elegir Paquete Growth
+            </a>
+          </div>
+
+          <!-- Package 3: Premium -->
+          <div class="package-card fade-in-up">
+            <div>
+              <div class="package-header">
+                <h3 class="package-name">Premium</h3>
+                <p class="package-ideal">Alianza mensual completa y producción multiformato.</p>
+                <div class="package-price-wrap">
+                  <span class="package-price-label">Inversión</span>
+                  <div class="package-price">A consultar</div>
+                </div>
+              </div>
+
+              <div class="package-features">
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span><strong>8+ Videos UGC</strong> al mes</span>
+                </div>
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Fotografía de Producto & Lifestyle (10 fotos HD)</span>
+                </div>
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Derechos de publicidad extendidos</span>
+                </div>
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Whitelisting & Spark Ads</span>
+                </div>
+                <div class="feature-item">
+                  <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Soporte prioritario & entrega en 5 días</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="mailto:vanessavivasugc@gmail.com?subject=Consulta%20Paquete%20Premium" class="btn btn-secondary" style="width: 100%;">
+              Consultar Premium
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         9. CONTACTO (CONTACT SECTION)
+         ========================================================================== -->
+    <section class="section-padding contact-section" id="contacto">
+      <div class="container">
+        <div class="contact-box fade-in-up">
+          <span class="section-eyebrow">Hablemos</span>
+          <h2 class="contact-title">Llevemos tu marca al siguiente nivel</h2>
+          <p class="contact-desc">
+            ¿Tienes una campaña en mente o deseas una propuesta personalizada para tus productos? Escríbeme y creemos contenido que enamore a tu comunidad.
+          </p>
+
+          <div class="contact-actions">
+            <a href="mailto:vanessavivasugc@gmail.com?subject=Nueva%20Colaboraci%C3%B3n%20UGC" class="btn btn-primary" style="font-size: 1.0625rem; padding: 1rem 2.25rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Escribir ahora
+            </a>
+
+            <a href="https://instagram.com/vanessavivasugc" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 1.0625rem; padding: 1rem 2.25rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              @vanessavivasugc
+            </a>
+          </div>
+
+          <div class="contact-meta">
+            <div class="meta-item">
+              <span class="status-dot"></span>
+              <span>Disponibilidad actual: <strong>Abierta a nuevos proyectos</strong></span>
+            </div>
+            <div class="meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Respuesta habitual: <strong>Menos de 24 horas</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       10. FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#hero" class="footer-brand">
+          Vanessa Vivas<span>.</span>
+        </a>
+
+        <ul class="footer-nav">
+          <li><a href="#about" class="footer-nav-link">Sobre Mí</a></li>
+          <li><a href="#servicios" class="footer-nav-link">Servicios</a></li>
+          <li><a href="#portafolio" class="footer-nav-link">Portafolio</a></li>
+          <li><a href="#proceso" class="footer-nav-link">Mi Proceso</a></li>
+          <li><a href="#paquetes" class="footer-nav-link">Paquetes</a></li>
+          <li><a href="#contacto" class="footer-nav-link">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Vanessa Vivas · UGC Creator. Todos los derechos reservados.</p>
+        <a href="#hero" class="back-to-top">
+          Volver arriba
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       JAVASCRIPT: THEME TOGGLE, SCROLL BEHAVIOR & INTERSECTIONS
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Theme Toggle (Dark Mode / Light Mode with LocalStorage)
+      const themeToggleBtn = document.getElementById('themeToggle');
+      const rootHtml = document.documentElement;
+
+      // Check saved preference or system preference
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        rootHtml.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        rootHtml.setAttribute('data-theme', 'dark');
+      }
+
+      themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = rootHtml.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        rootHtml.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+
+      // 2. Fixed Header Scroll Blur & Shadow
+      const siteHeader = document.getElementById('siteHeader');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          siteHeader.classList.add('scrolled');
+        } else {
+          siteHeader.classList.remove('scrolled');
+        }
+      }, { passive: true });
+
+      // 3. Mobile Navigation Drawer Toggle
+      const mobileNavToggle = document.getElementById('mobileNavToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const drawerOverlay = document.getElementById('drawerOverlay');
+      const mobileLinks = document.querySelectorAll('.mobile-drawer-link');
+
+      function toggleMobileMenu() {
+        const isOpen = mobileDrawer.classList.contains('open');
+        if (isOpen) {
+          mobileDrawer.classList.remove('open');
+          drawerOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+        } else {
+          mobileDrawer.classList.add('open');
+          drawerOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      mobileNavToggle.addEventListener('click', toggleMobileMenu);
+      drawerOverlay.addEventListener('click', toggleMobileMenu);
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mobileDrawer.classList.contains('open')) {
+            toggleMobileMenu();
+          }
+        });
+      });
+
+      // 4. Smooth Active Nav Link Highlighting via IntersectionObserver
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const currentId = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              if (link.getAttribute('href') === `#${currentId}`) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-30% 0px -70% 0px' });
+
+      sections.forEach(section => sectionObserver.observe(section));
+
+      // 5. Scroll Reveal Animation for Elements with .fade-in-up
+      const animatedElements = document.querySelectorAll('.fade-in-up');
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      animatedElements.forEach(el => revealObserver.observe(el));
+    });
+  </script>
+</body>
+</html>
